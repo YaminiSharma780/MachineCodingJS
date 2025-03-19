@@ -9,25 +9,22 @@
 </head>
 
 <body>
-    <div class="small-screen">
-        <button class="expander"><img height="30px" width="30px"
-                src="./assets/icons/icons8-hamburger-50.png" /></button>
-        <header class="header-small-screen">
-            <span><a href="/">MyApp</a></span>
-            <span><a href="/">Contact</a></span>
-            <span><a href="/">About</a></span>
-            <span><a href="/">Signup</a></span>
-            <span><a href="/">Login</a></span>
-        </header>
-    </div>
-    <div class="large-screen">
-        <header class="header-large-screen">
-            <span><a href="/">MyApp</a></span>
-            <span><a href="/">Contact</a></span>
-            <span><a href="/">About</a></span>
-            <span><a href="/">Signup</a></span>
-            <span><a href="/">Login</a></span>
-        </header>
+    <div class="nav-bar">
+        <h2>AppName</h2>
+        <div>
+            <button onclick="openMenu()" class="hamburger"><img height="40px" width="40px"
+                    src="./assets/icons/icons8-hamburger-50.png">
+            </button>
+            <div class="main-menu">
+                <ul class="main-menu-list">
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                    <li>Signup</li>
+                    <li>Login</li>
+                </ul>
+            </div>
+        </div>
     </div>
 </body>
 <script src="index.js"></script>
