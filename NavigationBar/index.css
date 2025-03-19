@@ -24,6 +24,10 @@
     height: 57px;
 }
 
+.main-menu.open {
+    opacity: 1;
+}
+
 .main-menu-list {
     list-style: none;
     display: flex;
@@ -42,7 +46,7 @@
 
 @media (max-width:500px) {
     .main-menu {
-        display: none;
+        opacity: 0;
     }
 
     .main-menu-list {
