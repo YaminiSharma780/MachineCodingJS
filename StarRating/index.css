@@ -1,0 +1,27 @@
+.main-parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    flex-direction: column;
+    pointer-events: none;
+}
+
+.star-parent {
+    font-size: 50px;
+}
+
+.star {
+    padding: 5px;
+    cursor: pointer;
+    color: grey;
+    pointer-events: auto;
+}
+
+.filled {
+    color: black;
+}
+
+/* .star:hover {
+    color: black;
+} */
