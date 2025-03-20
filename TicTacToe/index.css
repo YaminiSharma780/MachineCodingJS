@@ -1,0 +1,162 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    pointer-events: none;
+}
+
+.parent {
+    background-color: rgb(44, 43, 43);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.child {
+    background-color: white;
+    height: 300px;
+    width: 300px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    place-items: center;
+    background-color: rgb(44, 43, 43);
+}
+
+.square {
+    cursor: pointer;
+    height: 80px;
+    width: 80px;
+    border: 1px solid black;
+    pointer-events: auto;
+}
+
+.square:nth-child(odd) {
+    background-color: rgb(131, 57, 217);
+}
+
+.square:nth-child(even) {
+    background-color: rgb(237, 69, 142);
+}
+
+h1 {
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.result {
+    color: white;
+    font-size: large;
+    font-weight: bold;
+}
+
+button {
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+    height: 40px;
+    width: 100px;
+    border-radius: 5px;
+    background-color: rgb(72, 67, 238);
+    pointer-events: auto;
+}
+
+.fill-X::before {
+    height: 80px;
+    width: 80px;
+    content: "X";
+    font-size: 60px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fill-O::before {
+    height: 80px;
+    width: 80px;
+    content: "O";
+    font-size: 60px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* BAlLOONS */
+
+.balloon-container {
+    position: absolute;
+    /* Make it cover the whole screen */
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow balloons to wrap across the screen */
+    justify-content: space-around;
+    /* Distribute balloons evenly */
+    align-items: flex-start;
+    /* Align at the top */
+    pointer-events: none;
+    /* Avoid blocking other content */
+    z-index: -1;
+    /* Ensure the balloons are behind the game */
+}
+
+.balloon {
+    height: 125px;
+    width: 105px;
+    border-radius: 75% 75% 70% 70%;
+    background-color: #FDFD96;
+    position: relative;
+    animation: float 10s linear infinite;
+    /* Make them float upwards */
+}
+
+.balloon:before {
+    content: "";
+    height: 75px;
+    width: 1px;
+    background-color: #FDFD96;
+    position: absolute;
+    top: 125px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.balloon:after {
+    content: "▲";
+    text-align: center;
+    display: block;
+    position: absolute;
+    color: inherit;
+    top: 120px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+/* Floating animation */
+@keyframes float {
+    from {
+        transform: translateY(100vh);
+        /* Start below the screen */
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-300vh);
+        /* Go above the screen */
+        opacity: 0;
+    }
+}
