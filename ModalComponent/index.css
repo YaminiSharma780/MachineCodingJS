@@ -1,0 +1,58 @@
+.parent-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.parent-2 {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    padding: 20px;
+    height: 100%;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal {
+    border: 2px solid black;
+}
+
+img {
+    height: 40px;
+    width: 40px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    background-color: white;
+}
+
+.modal-content {
+    width: 100%;
+    background-color: white;
+}
+
+p {
+    margin: 0;
+}
+
+@media (max-width:400px) {
+    .modal-header {
+        gap: 10px;
+    }
+}
