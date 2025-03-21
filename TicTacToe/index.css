@@ -33,7 +33,9 @@ body {
     height: 80px;
     width: 80px;
     border: 1px solid black;
+    box-sizing: border-box;
     pointer-events: auto;
+    user-select: none;
 }
 
 .square:nth-child(odd) {
@@ -88,75 +90,4 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-/* BAlLOONS */
-
-.balloon-container {
-    position: absolute;
-    /* Make it cover the whole screen */
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    /* Allow balloons to wrap across the screen */
-    justify-content: space-around;
-    /* Distribute balloons evenly */
-    align-items: flex-start;
-    /* Align at the top */
-    pointer-events: none;
-    /* Avoid blocking other content */
-    z-index: -1;
-    /* Ensure the balloons are behind the game */
-}
-
-.balloon {
-    height: 125px;
-    width: 105px;
-    border-radius: 75% 75% 70% 70%;
-    background-color: #FDFD96;
-    position: relative;
-    animation: float 10s linear infinite;
-    /* Make them float upwards */
-}
-
-.balloon:before {
-    content: "";
-    height: 75px;
-    width: 1px;
-    background-color: #FDFD96;
-    position: absolute;
-    top: 125px;
-    left: 0;
-    right: 0;
-    margin: auto;
-}
-
-.balloon:after {
-    content: "▲";
-    text-align: center;
-    display: block;
-    position: absolute;
-    color: inherit;
-    top: 120px;
-    left: 0;
-    right: 0;
-    margin: auto;
-}
-
-/* Floating animation */
-@keyframes float {
-    from {
-        transform: translateY(100vh);
-        /* Start below the screen */
-        opacity: 1;
-    }
-
-    to {
-        transform: translateY(-300vh);
-        /* Go above the screen */
-        opacity: 0;
-    }
 }
